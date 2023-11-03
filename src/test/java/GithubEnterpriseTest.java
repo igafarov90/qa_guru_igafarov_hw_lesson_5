@@ -21,7 +21,6 @@ public class GithubEnterpriseTest {
         $(byTagAndText("button", "Solutions")).hover();
         $("#solutions-for-heading").parent().$("ul li").click();
         $("#hero-section-brand-heading").shouldHave(Condition.text("The AI-powered developer platform."));
-        sleep(5000);
     }
 
 

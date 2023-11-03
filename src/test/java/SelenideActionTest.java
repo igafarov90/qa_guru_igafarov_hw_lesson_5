@@ -1,10 +1,10 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.DragAndDropOptions;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.Point;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.DragAndDropOptions.to;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideActionTest {
@@ -25,7 +25,7 @@ public class SelenideActionTest {
         open("/drag_and_drop");
         $("#column-a").shouldHave(text("A"));
         $("#column-b").shouldHave(text("B"));
-        $("#column-b").dragAndDrop(DragAndDropOptions.to($("#column-a")));
+        $("#column-b").dragAndDrop(to($("#column-a")));
         $("#column-b").shouldHave(text("A"));
         $("#column-a").shouldHave(text("B"));
     }
